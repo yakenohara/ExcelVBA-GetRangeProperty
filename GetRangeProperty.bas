@@ -7,7 +7,6 @@ Attribute VB_Name = "GetRangeProperty"
 ' `\500`を返す
 '
 Public Function getText(ByVal rng As Range) As Variant
-    
     getText = rng.Text
     
 End Function
@@ -16,7 +15,15 @@ End Function
 ' 数式をテキストとして返す
 '
 Public Function getFormula(ByVal rng As Range) As Variant
-    
     getFormula = rng.Formula
+    
+End Function
+
+'
+'指定セルがセル結合されていた場合、
+'左上の内容を返す
+'
+Public Function getMergedValue(ByVal target As Range) As Variant
+    getMergedValue = target(1, 1).MergeArea.Cells(1, 1).Value
     
 End Function
