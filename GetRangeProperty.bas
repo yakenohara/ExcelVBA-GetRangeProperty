@@ -27,3 +27,11 @@ Public Function getMergedValue(ByVal target As Range) As Variant
     getMergedValue = target(1, 1).MergeArea.Cells(1, 1).Value
     
 End Function
+
+'
+' セルに挿入されたハイパーリンクを返す
+'
+Public Function getHyperlinkAddress(ByVal rng As Range)
+    getHyperlinkAddress = rng.Hyperlinks(1).Address
+End Function
+
